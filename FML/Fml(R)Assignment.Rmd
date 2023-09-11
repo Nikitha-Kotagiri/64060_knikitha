@@ -1,0 +1,50 @@
+---
+title: "FML(R)"
+author: "Nikitha Kotagiri"
+date: "2023-09-10"
+output:
+  pdf_document: default
+  html_document: default
+---
+# Imported the data set from kaggle
+```{r}
+make=read.csv("C:\\Users\\tirum\\Downloads\\archive\\Most Wickets in Test Cricket .csv")
+make
+```
+# The below code shows descriptive statistics that includes qualitative and quantitative vafriables showing mean,median, mode and soon
+```{r}
+summary(make)
+# qualitative variables
+summary(make$Player)
+summary(make$Country)
+# quantitative variables
+summary(make$Rank)
+summary(make$Span)
+summary(make$Matches)
+summary(make$Innings)
+summary(make$Runs)
+summary(make$Wickets)
+summary(make$Average)
+summary(make$Econ)
+```
+#Transforming a new variable
+```{r}
+log_d= log(make$Wickets)
+log_d
+```
+#I Plotted the graph with one quantitative variable in datset of make and the varible is Runs.
+```{r}
+ hist(make$Runs,main="Histogram of runs",col="green",border="black")
+```
+
+
+# Creating a scatter plot for the both quantitative and qualitative variable
+```{r}
+ x=make$Matches
+y=make$Runs
+plot(x,y)
+```
+
+
+
+
