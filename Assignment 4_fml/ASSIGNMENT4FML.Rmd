@@ -1,0 +1,158 @@
+---
+title: "ASSIGNMENT4"
+author: "Nikitha Kotagiri"
+date: "2023-11-13"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+SUMMARY:
+
+The variable "niki" is filled with the Pharmaceuticals data set. We utilized the head function to determine whether or not the data set had been appropriately loaded.Let us now move on to the challenges that we must fix.
+
+1: For cluster analysis, I used 9 numerical variables (3 to 11 columns) from the dataset.First, we obtained a summary of all 9 numerical variables that we are employing.
+Finding and displaying the distance between the rows matrix.Then we begin our clustering analysis with the wss and silhouette approaches.
+
+2: In this case, I utilize the inside sum of squares and Silhouette techniques to determine the ideal number of clusters to construct.The es and Silhouette techniques are used to determine the ideal amount of clusters to generate.
+
+2.1: Within Sum of Squares: The graph resembles a human hand with a bend similar to our elbow.The precise place in the graph when their will be less decrease. Looking at the graph, we can see that the rate of decline in wss slows down around "k=2" (this would be the ideal answer).
+
+The lower the Wss number, the tighter the clusters produced.The ideal wss value is 0.Furthermore, if identifying the best solution for specific data sets is challenging, we will use different approaches.
+
+2.2: Silhouette method: We may discover the best option by looking for the peak of the graph when the silhouette coefficient is at its highest value. We can observe from our graph that the curve reached its maximum point at k = 5. This implies that "k=5" is the best answer for the pharma dataset.
+
+If the silhouette distance is 1, the datapoints are appropriately allocated to the cluster; if it is -1, the datapoints are not properly assigned.
+
+Sometimes the best solution comes from a combination of both strategies.Then you must follow the other ways, or we must pick which one to use depending on the findings of the cluster summary.
+Wss technique:
+
+-Based on the Wss clustering study, which produced two clusters, we may deduce the following.
+Cluster 1: Profitable with a Moderate risk.The initial cluster discovered here has a high success rate, making it a good investment.The metrics listed below are used to Asset turnover, return on assets (ROA), return on expenses (ROE), and net profit margin are several ways to quantify success.This When the investment is large, cluster has a capital value of 73.84, a return on equity (ROE) of 31, and a return on investment (ROI) of 0.assets (ROA) of 15, which shows the profit expected from a company's high asset investments.In a In a similar vein, both net profit and asset turnover are high.The fact that the PE Ratio of the first company is lower than that of the second cluster implies In general, the beta value should be smaller than one, suggesting that the These businesses' variability is modest and lacks adequate variations. Furthermore, a company's "Leverage" value (the amount of cash borrowed for an investment) should be as low as possible. Because the market is constantly unpredictable, there is a possibility that the money borrowed for the investment would be lost although it was expected to provide gains. The leverage value in this case is 0.28, which is smaller than in the second cluster. "With a good investment, there should be very little chance of losing the entire amount invested," and enterprises in this cluster are reporting better success rates than those in the second cluster.
+Cluster 2: High risk, low profit.
+In this situation, the second cluster's performance measurements are inferior to those of the first. Its market capitalization is exceptionally low, 4.78 vs 73.84 in the first cluster, indicating that the firms listed in this cluster have a lower market share than the companies listed in the first cluster. Return on Equity (ROE), Return on Assets (ROA), Asset Turnover, and Net Profit Margin all experience drops in return on investment. The degree of hazard, which is reinforced by these enterprises' high leverage and beta values, suggesting a high degree of unpredictability and high borrowing rates as compared to the first cluster. In comparison, the PE Ratio is high.
+-> From the graph, we can see that the majority of pharmaceutical industry enterprises are headquartered in the United States, and we can observe a similar trend in clusters 1 and 2. This also implies that the United implies has enterprises that are both lucrative to invest in (Acceptable Profitability with Moderate Risk) and firms that are not profitable (Low Profitability with High Risk). However, the better performing cluster, Cluster 1, appears to contain a higher proportion of enterprises headquartered in the United States.
+
+Method of Silhouette: -
+
+We may deduce the following from the Silhouette clustering study, which produced five clusters.
+Cluster 1: The First Cluster looks to be overhyped. The PE Ratio appears to be highly flexible, measuring the share price in proportion to the company's worth and indicating whether or not the stock is overpriced.
+Furthermore, this group has significant beta and leverage levels, indicating that there is associated risk. There must be a better investing opportunity than this for an investment.
+
+Cluster 2:When it is concerned with providing returns on investment—basically, the value that any investor would want as a return on investment. There is also a significant amount of external borrowing and a reasonable amount of business variability (beta). Furthermore, its capital worth is the lowest of all the categories. Surprisingly, these companies also have the most income. This might be because the firms are young and need to establish themselves before moving into the market.
+
+Cluster 3: The Destiny Class's third cluster consists of firms with a decent market capitalization, an acceptable PE ratio, and moderate degrees of risk (beta and leverage). Furthermore, it has assets with a lucrative propensity and higher returns on investment. Even if the capital value is smaller in comparison, it may still be a suitable investment option because the valuation may change or improve in the future.
+
+Cluster 4: The Cluster is a very unpredictable cluster with greater beta (firm variability) and leverage (outside borrowings) values, indicating that these enterprises have a strong feeling of risk. Furthermore, due to its smaller market capitalization and net profit margin, it is less suitable for future investments.
+
+ Cluster 5:Anyone wishing to establish a lucrative pitch might consider investing in the Fourth Cluster. It has the "Highest Market Capital" of 153.245 in this cluster, the "Lofty ROE - Return on Expenditure of 43.10" & ROA - Return on Assets of 17.75", the "Sky-Spiking Asset Turnover" of 0.95, and the "Net Profit Margin" of 19.5. This is in contrast to other companies in distinct clusters. It also has a "less leverage value," which indicates that little borrowed cash will be required for future investments, and a "decent beta value," which indicates that there will be less fluctuation and risk associated.A corporation having a greater capital ratio, moderate risk, and a positive cash flow. and having fewer obligations is a favorable option for investors.Companies in this cluster choose the best choice.
+The wss and silhouette clusters show a comparable degree of patterning toward the site.
+
+When compared to the other locations, this one's clusters have a larger percentage of their locations in the "US." - It's worth noting, however, that Cluster 4, the strongest cluster for correctly characterizing the domain, has a greater share of US-based enterprises than non-US-based businesses.Other observations include .There is one strong buy, seven moderate buys, nine holds, and four moderate sells for a total of 21 recommendations. Cluster combines all four suggestions, including opposing advice on buys and sells. Group 3. Clusters 1, 4, and 5 include just mod buy and hold information.Cluster 2 has both a moderate buy and a moderate sell recommendation.
+There are 21 businesses in all, with 13 in the United States, three in the United Kingdom, and one each in Canada, France, Germany, Ireland, and Switzerland. Cluster 3 includes the United States, the United Kingdom, and Switzerland. Germany and the United States are in Cluster 4. Cluster 1 includes the United States and Canada. Cluster 5 includes the United States and the United Kingdom. Cluster 2 consists of the United States, France, and Ireland.
+
+There are 21 corporations in all, including 1 Amex, 1 Nasdaq, and 19 NYSE. Cluster 4 includes all three.
+Only NYSE is found in clusters 1,2,3,5.
+3: Using any or all of the variables in the dataset, give each cluster a suitable name.
+Non-plus Organization (Hold) Cluster 1
+Cluster 2: Moderate Compensation (Reduced)
+Destiny class (Moderate) Cluster 3
+Cluster 4: Excessive investment (Hold)
+High Margins (Strong Buy) Cluster 5
+Conclusion:
+Finally, every individual or business aspires to maximize their profit while incurring the fewest losses. They also anticipate the investment's long-term success. Based on my findings, Cluster 5 is the greatest option for investment. It provides larger rewards and a longer term. Cluster 3 is the other cluster I recommend. It has marginal gains that are risky but have a higher possibility of becoming profitable. The following clusters are not recommended for any company or venture capitalists since they incur losses or yield no marginal gains when invested in
+```{r}
+library(factoextra)
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+```
+#Use only the numerical variables (1 to 9) to cluster the 21 firms. Justify the various choices made in conducting the cluster analysis, such as weights for different variables, the specific clustering algorithm(s) used, the number of clusters formed, and so on. 
+```{r}
+niki <- read.csv("Pharmaceuticals.csv")
+head(niki)
+str(niki)
+```
+```{r}
+na.omit(niki)
+niki_new <- scale(niki[,3:11])
+summary(niki_new)
+```
+```{r}
+#visualizing the distance between rows of the distance matrix
+Distance <- dist(niki_new, method = "euclidian")
+fviz_dist(Distance)
+```
+#Applying k_means clustering for the question.
+```{r}
+fviz_nbclust(niki_new, kmeans, method = "wss")
+
+```
+
+```{r}
+kmeans_ab <- kmeans(niki_new, centers = 2, nstart = 20)
+
+fviz_cluster(kmeans_ab, data = niki_new) + ggtitle("K-means Clustering Visualization")
+
+print(kmeans_ab)
+```
+```{r}
+
+fviz_nbclust(niki_new, kmeans, method = "silhouette")
+
+```
+
+```{r}
+kmeans_silh <- kmeans(niki_new, centers = 5, nstart = 25)
+
+fviz_cluster(kmeans_silh, data = niki_new) + ggtitle("K-means Clustering Visualization")
+
+
+print(kmeans_silh)
+
+```
+#Interpret the clusters with respect to the numerical variables used in forming the clusters. Is there a pattern in the clusters with respect to the numerical variables (10 to 12)? (those not used in forming the clusters)
+
+
+```{r}
+clusters_ab <- kmeans_ab$cluster
+clusters_silh <- kmeans_silh$cluster
+
+temp_data_11 <- cbind(niki,clusters_ab)
+temp_data_22 <- cbind(niki,clusters_silh)
+
+```
+```{r}
+
+int_ab <- aggregate(temp_data_11[,-c(1:2,12:14)],by = list(temp_data_11$clusters_ab),FUN="median")
+print(int_ab[,-1])
+```
+```{r}
+#pattern in categorical variables
+ggplot(temp_data_11,aes(x=clusters_ab,fill=Location)) + geom_bar()
+
+```
+
+```{r}
+int_silh <- aggregate(temp_data_22[,-c(1:2,12:14)],by=list(temp_data_22$clusters_silh),FUN="median")
+print(int_silh[,-1])
+
+```
+
+```{r}
+
+ggplot(temp_data_22,aes(x=clusters_silh, fill = Location)) + geom_bar()
+
+```
+```{r}
+temp_data_3 <- niki[12:14] %>% mutate(Clusters=kmeans_silh$cluster)
+
+ggplot(temp_data_3, mapping=aes(factor(Clusters),fill=Median_Recommendation))+geom_bar(position='dodge')+labs(x ='Clusters')
+```
+
+```{r}
+ggplot(temp_data_3, mapping = aes(factor(Clusters),fill = Exchange))+geom_bar(position ='dodge')+labs(x ='Clusters')
+```
